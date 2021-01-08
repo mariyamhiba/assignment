@@ -1,0 +1,33 @@
+ {% extends 'myapp/admin_base.html'%}
+    {% block title %} {% endblock %}
+    {% block body %}
+
+<center>
+    <h2> USER DETAILS</h2>
+    <div class="container">
+    <form name="frm">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>ROLLNO</th>
+                <th>COURSE</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ud in user_list %}
+            <tr>
+                <td>{{ud.id}}</td>
+                <td>{{ud.uname}}</td>
+                <td>{{ud.rollno}}</td>
+                <td>{{ud.course}}</td>
+            </tr>
+            {% endfor%}
+            </tbody>
+        </table>
+    </form>
+    </div>
+
+</center>
+  {% endblock %}

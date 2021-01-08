@@ -1,0 +1,35 @@
+ {% extends 'myapp/admin_base.html'%}
+    {% block title %} {% endblock %}
+    {% block body %}
+
+<center>
+    <h2> USER DETAILS</h2>
+    <div class="container">
+    <form name="frm">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>SUBJECT</th>
+                <th>COURSE</th>
+                <th>ACTION</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ud in stud_list %}
+            <tr>
+                <td>{{ud.id}}</td>
+                <td>{{ud.sname}}</td>
+                <td>{{ud.subject}}</td>
+                <td>{{ud.course}}</td>
+                <td><a href="./admin_delete_stud?id={{ud.id}}">Delete</a></td>
+            </tr>
+            {% endfor%}
+            </tbody>
+        </table>
+    </form>
+    </div>
+
+</center>
+  {% endblock %}
